@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-zalo-mini-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vite plugin for Zalo Mini App",
   "author": "xuannghia",
   "files": [
@@ -11,8 +11,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
