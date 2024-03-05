@@ -2,7 +2,28 @@ import fs from 'fs'
 
 import { Plugin } from 'vite'
 
-export default function zaloMiniApp() {
+type HeaderColor = string
+type TextColor = "white" | "black"
+
+type MiniAppOptions = {
+  app: {
+    title: string;
+    headerTitle?: string;
+    headerColor?: HeaderColor | { light: HeaderColor; dark: HeaderColor };
+    leftButton?: "none" | "back";
+    textColor?: TextColor | { light: TextColor; dark: TextColor };
+    statusBar?: "normal" | "hidden" | "transparent";
+    actionBarHidden?: boolean;
+    hideAndroidBottomNavigationBar?: boolean;
+    hideIOSSafeAreaBottom?: boolean;
+    selfControlLoading?: boolean;
+  },
+  listCSS?: string[];
+  listSyncJS?: string[];
+  listAsyncJS?: string[];
+}
+
+export default function zaloMiniApp(maOptions: MiniAppOptions) {
   const config: Plugin = {
     name: 'vite-plugin-zalo-mini-app',
     config(config) {
@@ -58,15 +79,20 @@ export default function zaloMiniApp() {
                     return true;
                   });
                   const appConfigJson = {
+                    app: maOptions.app,
                     listCSS: [
                       ...cssFiles.map((f) => f.fileName),
+                      ...maOptions.listCSS || [],
                     ],
                     listSyncJS: [
                       ...jsFiles.map((f) => f.fileName),
+                      ...maOptions.listSyncJS || []
                     ],
                     listAsyncJS: [
                       ...modulePreloadFiles.map((f) => f.fileName),
+                      ...maOptions.listAsyncJS || []
                     ],
+                    pages: []
                   }
                   fs.writeFileSync(`${options.dir}/app-config.json`,
                     JSON.stringify(appConfigJson)
