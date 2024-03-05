@@ -3,7 +3,7 @@
 pnpm add -D vite-plugin-zalo-mini-app
 ```
 
-## Usage - `vite.config.ts`
+## Update your `vite.config.ts`
 ```typescript
 
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
@@ -12,11 +12,10 @@ import zaloMiniApp from 'vite-plugin-zalo-mini-app'
 
 export default () => {
   return defineConfig({
-    base: '',
     plugins: [
       react(),
       splitVendorChunkPlugin(),
-      miniApp({
+      zaloMiniApp({
         app: {
           title: 'Mini App Name',
           headerTitle: 'Mini App Name',

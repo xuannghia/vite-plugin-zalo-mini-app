@@ -26,8 +26,9 @@ type MiniAppOptions = {
 export default function zaloMiniApp(maOptions: MiniAppOptions) {
   const config: Plugin = {
     name: 'vite-plugin-zalo-mini-app',
-    config(config) {
+    config(config, env) {
       return {
+        base: env.command === 'serve' ? config.base : './',
         build: {
           outDir: config.build?.outDir || 'www',
           target: config.build?.target || 'es2015',
