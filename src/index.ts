@@ -29,6 +29,7 @@ export default function zaloMiniApp(maOptions: MiniAppOptions) {
     config(config) {
       return {
         build: {
+          outDir: config.build?.outDir || 'www',
           target: config.build?.target || 'es2015',
           cssTarget: config.build?.cssTarget || ['es2015', 'safari13.1'],
           rollupOptions: {
