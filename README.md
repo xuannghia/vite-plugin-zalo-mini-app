@@ -7,14 +7,6 @@
 pnpm add -D vite-plugin-zalo-mini-app
 ```
 
-If you don't have `zmp-cli` installed, you can install it by running:
-
-```bash
-pnpm add -g zmp-cli
-```
-
-(This example uses `pnpm`, you can use `npm` or `yarn`,...)
-
 ### 2. Update your `vite.config.ts`
 ```typescript
 
@@ -46,7 +38,17 @@ export default () => {
 
 > Because this plugin will automatic generate `app-config.json` for you with the configuration you provided in `vite.config.ts`. So if you have `app-config.json` in your project, you should remove it.
 
-### 3. Update your `package.json`
+## Run & Deploy
+
+### 1. Install the latest `zmp-cli`
+
+If you don't have `zmp-cli` installed, you can install it by running:
+
+```bash
+pnpm add -g zmp-cli
+```
+
+### 2. Update your `package.json`
 
 ```json
 {
@@ -59,7 +61,7 @@ export default () => {
 }
 ```
 
-## Run & deploy
+### 3. Run
 
 - 🔥 `pnpm start` to start local development server
 - 🚀 `pnpm build` to build your project
