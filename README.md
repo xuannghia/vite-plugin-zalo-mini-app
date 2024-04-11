@@ -1,5 +1,11 @@
 # ⚡ Vite plugin for Zalo Mini App
 
+
+[![npm](https://img.shields.io/npm/v/vite-plugin-zalo-mini-app.svg)](https://www.npmjs.com/package/vite-plugin-zalo-mini-app)
+[![download](https://img.shields.io/npm/dt/vite-plugin-zalo-mini-app.svg)](https://www.npmjs.com/package/vite-plugin-zalo-mini-app)
+[![bundlephobia](https://img.shields.io/bundlephobia/minzip/vite-plugin-zalo-mini-app.svg)](https://bundlephobia.com/package/vite-plugin-zalo-mini-app)
+
+
 ## How to setup?
 
 ### 1. Install
